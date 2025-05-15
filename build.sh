@@ -8,7 +8,7 @@ echo "[🧹] Entferne problematische Compiler-Flags"
 mkdir -p build
 cd build
 
-cmake . \
+cmake .. \
   -DCMAKE_BUILD_TYPE=Release \
   -DDOTNET_DIR=/opt/dotnet/ \
   -DCORECLR_DIR=/src/runtime/src/coreclr \
