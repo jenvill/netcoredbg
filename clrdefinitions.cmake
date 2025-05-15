@@ -9,6 +9,8 @@ if (PRERELEASE)
   add_definitions(-DFEATURE_DEFAULT_INTERFACES=1)  
 endif (PRERELEASE)
 
+add_definitions(-DFEATURE_PAL)
+
 if (CLR_CMAKE_TARGET_ARCH_AMD64)
   if (CLR_CMAKE_PLATFORM_UNIX)
     add_definitions(-DDBG_TARGET_AMD64_UNIX)
@@ -189,7 +191,8 @@ if(CLR_CMAKE_PLATFORM_UNIX)
   add_definitions(-DFEATURE_PAL_ANSI)
 endif(CLR_CMAKE_PLATFORM_UNIX)
 if(CLR_CMAKE_PLATFORM_LINUX)
-    add_definitions(-DFEATURE_PERFMAP)
+  add_definitions(-DFEATURE_PAL)
+  add_definitions(-DFEATURE_PERFMAP)
 endif(CLR_CMAKE_PLATFORM_LINUX)
 add_definitions(-DFEATURE_PREJIT)
 
