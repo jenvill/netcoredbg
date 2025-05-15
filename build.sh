@@ -5,10 +5,10 @@ echo "[🧹] Entferne problematische Compiler-Flags"
 # find . -name "CMakeLists.txt" -exec sed -i 's/-ferror-limit=4096//g' {} +
 # find . -name "CMakeLists.txt" -exec sed -i 's/-Walign-cast//g' {} +
 
+rm -r build
 mkdir -p build
-cd build
 
-cmake .. \
+CC=clang CXX=clang++ cmake .. \
   -DCMAKE_BUILD_TYPE=Release \
   -DDOTNET_DIR=/opt/dotnet/ \
   -DCORECLR_DIR=/src/runtime/src/coreclr \
